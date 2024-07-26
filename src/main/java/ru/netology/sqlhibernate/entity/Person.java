@@ -5,29 +5,19 @@ import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
-
-@Entity
-@Getter
-@Setter
-@Builder
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "PERSONS")
+@Table(name = "persons")
+@Entity
 public class Person {
     @EmbeddedId
-    private PersonId personId;
+    private PersonId person;
 
-    @Column(name = "phone_number", nullable = false, length = 254)
+    @Column(nullable = false)
     private String phoneNumber;
 
-    @Column(name = "city_of_living", nullable = false, length = 254)
-    private String city;
+    @Column(nullable = false)
+    private String cityOfLiving;
 
-    @Override
-    public String toString() {
-        return "\nPerson {" + personId
-                + ", phoneNumber= " + phoneNumber
-                + ", city= " + city
-                + "}";
-    }
 }
