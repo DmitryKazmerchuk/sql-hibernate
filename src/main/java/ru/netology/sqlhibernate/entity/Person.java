@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 @Getter
 @Setter
@@ -27,6 +26,6 @@ public class Person implements Serializable {
     private int age;
     @Column(nullable = false)
     private String phone_number;
-    @Column(nullable = false)
-    private String city_of_living;
+    @Column(name = "city_of_living", nullable = false)
+    private String city;
 }
