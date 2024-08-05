@@ -4,20 +4,29 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.Objects;
 
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "persons")
 @Entity
-public class Person {
-    @EmbeddedId
-    private PersonId person;
-
+@IdClass(PersonId.class)
+public class Person implements Serializable {
+    @Id
     @Column(nullable = false)
-    private String phoneNumber;
-
+    private String name;
+    @Id
     @Column(nullable = false)
-    private String cityOfLiving;
-
+    private String surname;
+    @Id
+    @Column(nullable = false)
+    private int age;
+    @Column(nullable = false)
+    private String phone_number;
+    @Column(nullable = false)
+    private String city_of_living;
 }

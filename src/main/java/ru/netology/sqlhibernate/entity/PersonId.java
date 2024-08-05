@@ -1,18 +1,14 @@
 package ru.netology.sqlhibernate.entity;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
-import lombok.*;
-
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import java.io.Serializable;
-import java.util.Objects;
 
-@Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@Embeddable
+@AllArgsConstructor
 public class PersonId implements Serializable {
+
     @Column(nullable = false)
     private String name;
 
@@ -21,5 +17,4 @@ public class PersonId implements Serializable {
 
     @Column(nullable = false)
     private int age;
-
 }
