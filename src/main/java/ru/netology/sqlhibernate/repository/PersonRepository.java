@@ -2,6 +2,7 @@ package ru.netology.sqlhibernate.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import ru.netology.sqlhibernate.entity.Person;
 
@@ -9,7 +10,7 @@ import java.util.List;
 
 @Repository
 public class PersonRepository {
-    @PersistenceContext
+@Autowired
     private EntityManager entityManager;
 
 
